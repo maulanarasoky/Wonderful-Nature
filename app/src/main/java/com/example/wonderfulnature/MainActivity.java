@@ -2,6 +2,7 @@ package com.example.wonderfulnature;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -31,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
         listAllNature.setListNature(listNature);
         category.setAdapter(listAllNature);
     }
+    public void showGrid() {
+        category.setLayoutManager(new GridLayoutManager(this, 2));
+        GridAllNature gridAllNature = new GridAllNature(this);
+        gridAllNature.setListNature(listNature);
+        category.setAdapter(gridAllNature);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -45,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 showList();
                 break;
             case R.id.grid:
+                showGrid();
                 break;
             case R.id.cardView:
                 break;
