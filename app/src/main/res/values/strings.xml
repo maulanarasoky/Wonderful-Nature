@@ -3,4 +3,11 @@
     <string name="list">List</string>
     <string name="grid">Grid</string>
     <string name="with_cardview">With CardView</string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+    <string name="description">Description</string>
+    <string name="short_description">Short Description</string>
+    <string name="location">Location</string>
+    <string name="other_pictures">Other Pictures</string>
+    <string name="other_name">Other Name</string>
 </resources>

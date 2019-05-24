@@ -1,6 +1,7 @@
 package com.example.wonderfulnature;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -40,6 +41,8 @@ public class ListAllNature extends RecyclerView.Adapter<ListAllNature.CategoryVi
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, int position) {
+        final Nature nature = getListNature().get(position);
+
         categoryViewHolder.the_title.setText(getListNature().get(position).getThe_title());
         categoryViewHolder.short_description.setText(getListNature().get(position).getShort_description());
 
@@ -47,6 +50,20 @@ public class ListAllNature extends RecyclerView.Adapter<ListAllNature.CategoryVi
                 .load(getListNature().get(position).getPhoto())
                 .apply(new RequestOptions().override(55,55))
                 .into(categoryViewHolder.photo);
+
+        categoryViewHolder.photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailsNature.class);
+
+                intent.putExtra("Name", nature.getThe_title());
+                intent.putExtra("Long Description", nature.getLong_description());
+                intent.putExtra("Short Description", nature.getShort_description());
+                intent.putExtra(DetailsNature.PHOTO, nature.getPhoto());
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

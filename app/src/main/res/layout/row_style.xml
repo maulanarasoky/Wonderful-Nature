@@ -13,12 +13,12 @@
         style="@style/linear_layout_row">
     <TextView
         android:id="@+id/the_title"
-        tools:src="Angel Falls, Venezuela"
+        tools:text="Angel Falls, Venezuela"
         style="@style/TextView_row_title"/>
     <TextView
         android:id="@+id/short_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:src="The world's highest waterfall—the 3,212-foot cascades of Angel Falls"/>
+        tools:text="The world's highest waterfall—the 3,212-foot cascades of Angel Falls"/>
     </LinearLayout>
 </RelativeLayout>

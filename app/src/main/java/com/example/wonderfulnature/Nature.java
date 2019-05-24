@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class Nature implements Parcelable {
 
-    String the_title, short_description, photo;
+    String the_title, short_description, long_description, photo, other_name, location, other_img_one, other_img_two, other_img_three;
 
     public String getThe_title() {
         return the_title;
@@ -23,12 +23,60 @@ public class Nature implements Parcelable {
         this.short_description = short_description;
     }
 
+    public String getLong_description() {
+        return long_description;
+    }
+
+    public void setLong_description(String long_description) {
+        this.long_description = long_description;
+    }
+
     public String getPhoto() {
         return photo;
     }
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public String getOther_name() {
+        return other_name;
+    }
+
+    public void setOther_name(String other_name) {
+        this.other_name = other_name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getOther_img_one() {
+        return other_img_one;
+    }
+
+    public void setOther_img_one(String other_img_one) {
+        this.other_img_one = other_img_one;
+    }
+
+    public String getOther_img_two() {
+        return other_img_two;
+    }
+
+    public void setOther_img_two(String other_img_two) {
+        this.other_img_two = other_img_two;
+    }
+
+    public String getOther_img_three() {
+        return other_img_three;
+    }
+
+    public void setOther_img_three(String other_img_three) {
+        this.other_img_three = other_img_three;
     }
 
     @Override
@@ -41,6 +89,12 @@ public class Nature implements Parcelable {
         dest.writeString(this.the_title);
         dest.writeString(this.short_description);
         dest.writeString(this.photo);
+        dest.writeString(this.long_description);
+        dest.writeString(this.other_name);
+        dest.writeString(this.location);
+        dest.writeString(this.other_img_one);
+        dest.writeString(this.other_img_two);
+        dest.writeString(this.other_img_three);
     }
     public Nature() {
 
@@ -48,7 +102,13 @@ public class Nature implements Parcelable {
     protected Nature(Parcel in) {
         this.the_title = in.readString();
         this.short_description = in.readString();
+        this.long_description = in.readString();
         this.photo = in.readString();
+        this.other_name = in.readString();
+        this.location = in.readString();
+        this.other_img_one = in.readString();
+        this.other_img_two = in.readString();
+        this.other_img_three = in.readString();
     }
     public static final Parcelable.Creator<Nature> CREATOR = new Creator<Nature>() {
         @Override

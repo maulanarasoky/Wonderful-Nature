@@ -1,6 +1,7 @@
 package com.example.wonderfulnature;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -39,10 +40,25 @@ public class GridAllNature extends RecyclerView.Adapter<GridAllNature.GridViewHo
 
     @Override
     public void onBindViewHolder(@NonNull GridViewHolder gridViewHolder, int position) {
+        final Nature nature = getListNature().get(position);
         Glide.with(context)
                 .load(getListNature().get(position).getPhoto())
                 .apply(new RequestOptions().override(350,550))
                 .into(gridViewHolder.photo);
+
+        gridViewHolder.photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailsNature.class);
+
+                intent.putExtra("Name", nature.getThe_title());
+                intent.putExtra("Long Description", nature.getLong_description());
+                intent.putExtra("Short Description", nature.getShort_description());
+                intent.putExtra(DetailsNature.PHOTO, nature.getPhoto());
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

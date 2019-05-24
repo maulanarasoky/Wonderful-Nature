@@ -10,6 +10,6 @@
         android:id="@+id/category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/row_style" />
+        tools:listitem="@layout/cardview_style" />
 
 </RelativeLayout>
