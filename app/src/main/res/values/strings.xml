@@ -7,7 +7,10 @@
     <string name="share">Share</string>
     <string name="description">Description</string>
     <string name="short_description">Short Description</string>
-    <string name="location">Location</string>
-    <string name="other_pictures">Other Pictures</string>
     <string name="other_name">Other Name</string>
+    <string name="time_zone">Time Zone</string>
+    <string name="country">Country</string>
+    <string name="coordinates">Coordinates</string>
+    <string name="follow_us">Follow Us</string>
+    <string name="let_s_travel">Let\'s Travel</string>
 </resources>

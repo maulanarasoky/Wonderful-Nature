@@ -8,10 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -72,8 +75,11 @@ public class CardViewAllNature extends RecyclerView.Adapter<CardViewAllNature.Ca
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plain");
                 String shareBody = "[ SHARE ]\n" + getListNature().get(position).getThe_title() +
-                        "\n\nFollow my github account : https://www.github.com/maulanarasoky" +
-                        "\nAnd check my blog : https://www.mul-code.blogspot.com";
+                        "\n\nWow ! This place is so beautiful !" +
+                        "\n\nCome and check it at this link !" +
+                        "\nhttps://www.github.com/maulanarasoky" +
+                        "\nOr in this link !" +
+                        "\nhttps://www.mul-code.blogspot.com";
                 share.putExtra(Intent.EXTRA_TEXT, shareBody);
                 context.startActivity(Intent.createChooser(share, "Share Using"));
                 return false;
@@ -89,11 +95,10 @@ public class CardViewAllNature extends RecyclerView.Adapter<CardViewAllNature.Ca
                 intent.putExtra("Long Description", nature.getLong_description());
                 intent.putExtra("Short Description", nature.getShort_description());
                 intent.putExtra(DetailsNature.PHOTO, nature.getPhoto());
-                intent.putExtra(DetailsNature.OTHER_PHOTO_ONE, nature.getOther_img_one());
-                intent.putExtra(DetailsNature.OTHER_PHOTO_TWO, nature.getOther_img_two());
-                intent.putExtra(DetailsNature.OTHER_PHOTO_THREE, nature.getOther_img_three());
                 intent.putExtra("Other Name", nature.getOther_name());
                 intent.putExtra("Location", nature.getLocation());
+                intent.putExtra("Time Zone", nature.getTime_zone());
+                intent.putExtra("Coordinates", nature.getCoordinates());
 
                 context.startActivity(intent);
             }

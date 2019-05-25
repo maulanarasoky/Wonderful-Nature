@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class Nature implements Parcelable {
 
-    String the_title, short_description, long_description, photo, other_name, location, other_img_one, other_img_two, other_img_three;
+    String the_title, short_description, long_description, photo, other_name, location, time_zone, coordinates;
 
     public String getThe_title() {
         return the_title;
@@ -55,28 +55,20 @@ public class Nature implements Parcelable {
         this.location = location;
     }
 
-    public String getOther_img_one() {
-        return other_img_one;
+    public String getTime_zone() {
+        return time_zone;
     }
 
-    public void setOther_img_one(String other_img_one) {
-        this.other_img_one = other_img_one;
+    public void setTime_zone(String time_zone) {
+        this.time_zone = time_zone;
     }
 
-    public String getOther_img_two() {
-        return other_img_two;
+    public String getCoordinates() {
+        return coordinates;
     }
 
-    public void setOther_img_two(String other_img_two) {
-        this.other_img_two = other_img_two;
-    }
-
-    public String getOther_img_three() {
-        return other_img_three;
-    }
-
-    public void setOther_img_three(String other_img_three) {
-        this.other_img_three = other_img_three;
+    public void setCoordinates(String coordinates) {
+        this.coordinates = coordinates;
     }
 
     @Override
@@ -92,9 +84,8 @@ public class Nature implements Parcelable {
         dest.writeString(this.long_description);
         dest.writeString(this.other_name);
         dest.writeString(this.location);
-        dest.writeString(this.other_img_one);
-        dest.writeString(this.other_img_two);
-        dest.writeString(this.other_img_three);
+        dest.writeString(this.time_zone);
+        dest.writeString(this.coordinates);
     }
     public Nature() {
 
@@ -106,9 +97,8 @@ public class Nature implements Parcelable {
         this.photo = in.readString();
         this.other_name = in.readString();
         this.location = in.readString();
-        this.other_img_one = in.readString();
-        this.other_img_two = in.readString();
-        this.other_img_three = in.readString();
+        this.time_zone = in.readString();
+        this.coordinates = in.readString();
     }
     public static final Parcelable.Creator<Nature> CREATOR = new Creator<Nature>() {
         @Override

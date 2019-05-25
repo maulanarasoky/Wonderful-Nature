@@ -44,8 +44,9 @@
                     android:paddingRight="5dp"
                     android:paddingBottom="17dp"
                     android:textAlignment="center"
+                    android:gravity="center_horizontal"
                     android:textColor="@android:color/white"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     tools:src="Test" />
             </RelativeLayout>
 
@@ -66,6 +67,26 @@
                 android:layout_marginTop="40dp"
                 android:textSize="14sp"
                 tools:text="Short Description" />
+            <Button
+                android:id="@+id/follow_button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="110dp"
+                android:text="@string/follow_us"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/contact_us"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="160dp"
+                android:text="Contact Us"
+                android:layout_weight="1"/>
         </FrameLayout>
 
         <TextView
@@ -74,10 +95,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:text="@string/description"
             android:textAlignment="textStart"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:lineSpacingExtra="8dp"/>
 
         <TableLayout
             android:layout_width="match_parent"
@@ -119,10 +141,11 @@
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:text="@string/location" />
+                    android:text="@string/country" />
 
                 <TextView
-                    android:text=": "/>
+                    android:text=": "
+                    android:layout_marginRight="8dp"/>
 
                 <TextView
                     android:id="@+id/location"
@@ -130,38 +153,49 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:text="@string/time_zone"/>
+                <TextView
+                    android:text=": "
+                    android:layout_marginRight="8dp"/>
+                <TextView
+                    android:id="@+id/time_zone"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:text="@string/coordinates"/>
+                <TextView
+                    android:text=": "
+                    android:layout_marginRight="8dp"/>
+                <TextView
+                    android:id="@+id/coordinates"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
         </TableLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:text="@string/other_pictures" />
-
-        <ImageView
-            android:id="@+id/other_img_one"
-            android:layout_width="170dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="8dp"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center"
-            android:background="@color/colorAccent"/>
-        <ImageView
-            android:id="@+id/other_img_two"
-            android:layout_width="170dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="8dp"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center"
-            android:background="@color/colorAccent"/>
-        <ImageView
-            android:id="@+id/other_img_three"
-            android:layout_width="170dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="8dp"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center"
-            android:background="@color/colorAccent"/>
+        <Button
+            android:id="@+id/lets_travel"
+            style="@style/ButtonGeneral"
+            android:text="@string/let_s_travel" />
     </LinearLayout>
 
 </ScrollView>
